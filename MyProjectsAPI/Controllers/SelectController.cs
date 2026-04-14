@@ -171,6 +171,7 @@ namespace MyProjectsAPI.Controllers
         }
 
         [HttpPost]
+        [ActionName("InsertUserDetails")]
         public int InsertUserDetails([FromBody] UserDetails userDetails)
         {
             UserDetailsDB userDetailsDB = new UserDetailsDB();

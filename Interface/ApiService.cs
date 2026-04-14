@@ -21,7 +21,7 @@ namespace Service
         public HttpClient client;
         public ApiService()
         {
-            uri = "http://localhost:5038";
+            uri = "https://localhost:7290";
             client = new HttpClient();
         }
         public async Task<CountriesList> GetAllCountries()
@@ -139,7 +139,7 @@ namespace Service
 
         public async Task<int> InsertUserDetails(UserDetails userDetails)
         {
-            return (await client.PostAsJsonAsync<UserDetails>(uri + "/api/Insert/InsertUserDetails/", userDetails)).IsSuccessStatusCode ? 1 : 0;
+            return (await client.PostAsJsonAsync<UserDetails>(uri + "/api/Insert/InsertUserDetails", userDetails)).IsSuccessStatusCode ? 1 : 0;
         }
 
 
